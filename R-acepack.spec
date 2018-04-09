@@ -4,7 +4,7 @@
 #
 Name     : R-acepack
 Version  : 1.4.1
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Summary  : ACE and AVAS for Selecting Multiple Regression Transformations
@@ -36,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521164450
+export SOURCE_DATE_EPOCH=1523286882
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521164450
+export SOURCE_DATE_EPOCH=1523286882
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
