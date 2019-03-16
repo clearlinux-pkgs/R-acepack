@@ -4,21 +4,19 @@
 #
 Name     : R-acepack
 Version  : 1.4.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Summary  : ACE and AVAS for Selecting Multiple Regression Transformations
 Group    : Development/Tools
 License  : MIT
-Requires: R-acepack-lib
-BuildRequires : clr-R-helpers
+Requires: R-acepack-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
-The first, Alternative Conditional Expectations (ACE), 
-  is an algorithm to find the fixed point of maximal
-  correlation, i.e. it finds a set of transformed response variables that maximizes R^2
-  using smoothing functions [see Breiman, L., and J.H. Friedman. 1985. "Estimating Optimal Transformations
-  for Multiple Regression and Correlation". Journal of the American Statistical Association.
+This package is based on public domain S and FORTRAN code for AVAS by
+Tibshirani, and on FORTRAN code for ACE from Statlib, written by Spector
+and Friedman.
 
 %package lib
 Summary: lib components for the R-acepack package.
@@ -36,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523286882
+export SOURCE_DATE_EPOCH=1552707658
 
 %install
+export SOURCE_DATE_EPOCH=1552707658
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523286882
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library acepack|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  acepack || :
 
 
 %files
@@ -106,7 +103,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/acepack/help/paths.rds
 /usr/lib64/R/library/acepack/html/00Index.html
 /usr/lib64/R/library/acepack/html/R.css
-/usr/lib64/R/library/acepack/libs/symbols.rds
+/usr/lib64/R/library/acepack/tests/testthat.R
+/usr/lib64/R/library/acepack/tests/testthat/test_transform.R
 
 %files lib
 %defattr(-,root,root,-)
