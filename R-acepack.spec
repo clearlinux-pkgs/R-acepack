@@ -4,7 +4,7 @@
 #
 Name     : R-acepack
 Version  : 1.4.1
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Summary  : ACE and AVAS for Selecting Multiple Regression Transformations
