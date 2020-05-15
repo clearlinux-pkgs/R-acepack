@@ -4,7 +4,7 @@
 #
 Name     : R-acepack
 Version  : 1.4.1
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/acepack_1.4.1.tar.gz
 Summary  : ACE and AVAS for Selecting Multiple Regression Transformations
@@ -12,12 +12,13 @@ Group    : Development/Tools
 License  : MIT
 Requires: R-acepack-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-This package is based on public domain S and FORTRAN code for AVAS by
-Tibshirani, and on FORTRAN code for ACE from Statlib, written by Spector
-and Friedman.
+The first, Alternative Conditional Expectations (ACE), 
+  is an algorithm to find the fixed point of maximal
+  correlation, i.e. it finds a set of transformed response variables that maximizes R^2
+  using smoothing functions [see Breiman, L., and J.H. Friedman. 1985. "Estimating Optimal Transformations
+  for Multiple Regression and Correlation". Journal of the American Statistical Association.
 
 %package lib
 Summary: lib components for the R-acepack package.
@@ -29,21 +30,22 @@ lib components for the R-acepack package.
 
 %prep
 %setup -q -c -n acepack
+cd %{_builddir}/acepack
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571793049
+export SOURCE_DATE_EPOCH=1589510879
 
 %install
-export SOURCE_DATE_EPOCH=1571793049
+export SOURCE_DATE_EPOCH=1589510879
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

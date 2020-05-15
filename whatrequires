@@ -1,5 +1,4 @@
 # This file contains recursive sources that require this package
+R-BB
 R-Hmisc
-R-PerformanceAnalytics
 R-haplo.stats
-R-rms
