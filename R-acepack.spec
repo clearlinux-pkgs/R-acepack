@@ -6,10 +6,10 @@
 # autospec commit: 94c6be0
 #
 Name     : R-acepack
-Version  : 1.5.1
-Release  : 63
-URL      : https://ftp.osuosl.org/pub/cran/src/contrib/acepack_1.5.1.tar.gz
-Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/acepack_1.5.1.tar.gz
+Version  : 1.5.2
+Release  : 64
+URL      : https://ftp.osuosl.org/pub/cran/src/contrib/acepack_1.5.2.tar.gz
+Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/acepack_1.5.2.tar.gz
 Summary  : ACE and AVAS for Selecting Multiple Regression Transformations
 Group    : Development/Tools
 License  : MIT
@@ -58,10 +58,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1737594017
+export SOURCE_DATE_EPOCH=1738079969
 
 %install
-export SOURCE_DATE_EPOCH=1737594017
+export SOURCE_DATE_EPOCH=1738079969
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-acepack
 cp %{_builddir}/acepack/LICENSE.note %{buildroot}/usr/share/package-licenses/R-acepack/698e04a130a50d9e0b990f4bd2569fa54366102a || :
